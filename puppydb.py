@@ -144,13 +144,14 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{username}:{password}@
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+# db.create_all()
 Migrate(app,db)
 
 class Puppy(db.Model):
     # manually set name of table  to puppies
     __tablename__ = 'puppies'
     #create table if does not exist
-    db.create_all()
+    # db.create_all()
     # set column names
     id = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.Text)
@@ -169,12 +170,13 @@ class Owner(db.Model):
 
     __tablename__ = 'owners'
     #create table if does not exist
-    db.create_all()
+    # db.create_all()
     #set column names
     id = db.Column(db.Integer,primary_key= True)
     name = db.Column(db.Text)
     # We use puppies.id because __tablename__='puppies'
     puppy_id = db.Column(db.Integer,db.ForeignKey('puppies.id'))
+    # db.create_all()
 
     def __init__(self,name,puppy_id):
         self.name = name
@@ -182,6 +184,7 @@ class Owner(db.Model):
 
     def __repr__(self):
         return f"Owner Name: {self.name}"
+db.create_all()
 ############################################
 
         # VIEWS WITH FORMS
