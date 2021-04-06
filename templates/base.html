@@ -21,10 +21,18 @@
       <a class="nav-item nav-link" href="{{ url_for('add_owner') }}">Add Owner</a>
     </div>
 
+    <!-- <div class="bg-image" 
+     style="background-image: url('/Images/dogfrisbee.jpg');
+            height: 100vh"></div> -->
+
 </nav>
 
     {% block content %}
 
     {% endblock %}
+  <!-- <div style="background-image: url('https://unsplash.com/photos/6uzz9iIsPoM');"></div> -->
+  <!-- <div style="background-image: url('../dogfrisbee.jpg);"></div> -->
+  <img src="{{url_for('static', filename='dogfrisbee.gif')}}">
+  <!-- <img src = "/dogfrisbee.jpg"> -->
   </body>
 </html>
