@@ -1,8 +1,9 @@
+<title>Remove a Puppy</title>
 {% extends "base.html" %}
 {% block content %}
 <div class="jumbotron">
   <h1>Did a puppy get adopted?</h1>
-  <p>Fill out the form to remove the puppy from the list.</p>
+  <p>Fill out the form to remove the puppy from our database! Happy gotcha day!</p>
   <form method="POST">
       {# This hidden_tag is a CSRF security feature. #}
       {{ form.hidden_tag() }}

@@ -1,0 +1,37 @@
+body, html {
+    height: 100%;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url('../static/med_dogfrisbee.jpg');
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Position the navbar container inside the image */
+.container {
+    position: absolute;
+    margin: 20px;
+    width: auto;
+  }
+
+/* make jumbotron transparent */
+.jumbotron {
+    opacity: 0.75;
+}
+
+h1 {
+  color:#03b1fc
+}
+
+#btmNavBar{
+  opacity: 0.5; 
+  filter:(opacity=50);  
+}

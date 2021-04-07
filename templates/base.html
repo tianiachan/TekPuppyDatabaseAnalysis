@@ -6,26 +6,23 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-    <title>Puppy Adoption</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <!-- <title>Puppy Adoption</title> -->
   </head>
-  <body style="background-image: url('../static/whitedog.jpg');">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <body style="background-image: url('../static/puppywalk.jpg');">
 
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
-      <a class="nav-item nav-link" href="{{ url_for('add_pup') }}">Add Pup</a>
-      <a class="nav-item nav-link" href="{{ url_for('list_pup') }}">List of Pups</a>
-      <a class="nav-item nav-link" href="{{ url_for('del_pup') }}">Delete Pup</a>
-      <a class="nav-item nav-link" href="{{ url_for('add_owner') }}">Add Owner</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-    <!-- <div class="bg-image" 
-     style="background-image: url('/Images/dogfrisbee.jpg');
-            height: 100vh"></div> -->
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+        <a class="nav-item nav-link" href="{{ url_for('add_pup') }}">Add Pup</a>
+        <a class="nav-item nav-link" href="{{ url_for('list_pup') }}">List of Pups</a>
+        <a class="nav-item nav-link" href="{{ url_for('del_pup') }}">Delete Pup</a>
+        <a class="nav-item nav-link" href="{{ url_for('add_owner') }}">Add Foster</a>
+      </div>
 
-</nav>
+    </nav>
 
     {% block content %}
 
@@ -40,5 +37,13 @@
   <!-- <img src = "/dogfrisbee.jpg"> -->
   <!-- <img src = "https://images.unsplash.com/photo-1541888050297-a615ca315e96?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"> -->
   <!-- <img src = 'https://unsplash.com/photos/6uzz9iIsPoM'> -->
+
+  <nav class="navbar fixed-bottom navbar-light bg-light" id = 'btmNavBar' >
+    <div class="navbar-nav">
+      <a class="navbar-brand" href="facebook.com">Facebook</a>
+      <a class="navbar-brand" href="instagram.com">Instagram</a>
+      <a class="navbar-brand" href="twitter.com">Twitter</a>
+    </div>
+  </nav>
   </body>
 </html>

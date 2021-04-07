@@ -1,12 +1,20 @@
+<title>Add a Puppy</title>
 {% extends "base.html" %}
+
 {% block content %}
 <div class="jumbotron">
   <h1>Have a puppy that needs to be adopted?</h1>
-  <p>Add a new puppy with the form below:</p>
+  <p>Add a new puppy to our database with the form below:</p>
   <form method="POST">
       {# This hidden_tag is a CSRF security feature. #}
       {{ form.hidden_tag() }}
-      {{ form.name.label }} {{ form.name() }}
+      <!-- forcing padding between these elements -->
+      <br>
+      <br>
+      {{ form.name.label }} {{ form.name() }}<br>
+      {{ form.weight.label }} {{ form.weight() }}<br>
+      {{ form.age.label }} {{ form.age() }}<br>
+      {{ form.coat_color.label }} {{ form.coat_color() }}<br>
       {{ form.submit() }}
   </form>
 </div>
