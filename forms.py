@@ -6,9 +6,9 @@ from wtforms import StringField, IntegerField, SubmitField
 class AddForm(FlaskForm):
 
     name = StringField('Name of Puppy:')
-    weight = IntegerField('Weight of Puppy:')
-    age = IntegerField('Age of Puppy:')
-    coat_color = StringField('Coat Color of Puppy:')
+    size = StringField('Size of Puppy (small, medium, large):')
+    age = IntegerField('Age of Puppy (years):')
+    breed = StringField('Breed of Puppy:')
     submit = SubmitField('Add Puppy')
 
 class AddOwnerForm(FlaskForm):

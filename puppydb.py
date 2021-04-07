@@ -27,13 +27,16 @@ class Puppy(db.Model):
     # set column names
     id = db.Column(db.Integer,primary_key = True)
     name = db.Column(db.Text)
-    weight = db.Column(db.Integer)
+    size = db.Column(db.Text)
     age = db.Column(db.Integer)
-    coat_color = db.Column(db.Text)
+    breed = db.Column(db.Text)
     owners = db.relationship('Owner',backref='puppies',uselist=False)
 
-    def __init__(self,name):
+    def __init__(self,name,size,age,breed):
         self.name = name
+        self.size = size
+        self.age = age
+        self.breed = breed
 
     def __repr__(self):
         if self.owners:
@@ -44,17 +47,15 @@ class Puppy(db.Model):
 class Owner(db.Model):
 
     __tablename__ = 'owners'
-    #create table if does not exist
-    # db.create_all()
+
     #set column names
     id = db.Column(db.Integer,primary_key= True)
     name = db.Column(db.Text)
     email = db.Column(db.Text)
     # We use puppies.id because __tablename__='puppies'
     puppy_id = db.Column(db.Integer,db.ForeignKey('puppies.id'))
-    # db.create_all()
 
-    def __init__(self,name,puppy_id):
+    def __init__(self,name,email,puppy_id):
         self.name = name
         self.puppy_id = puppy_id
 
@@ -78,9 +79,12 @@ def add_pup():
 
     if form.validate_on_submit():
         name = form.name.data
+        size = form.size.data
+        age = form.age.data
+        breed = form.breed.data
 
         # Add new Puppy to database
-        new_pup = Puppy(name)
+        new_pup = Puppy(name, size, age, breed)
         db.session.add(new_pup)
         db.session.commit()
 
@@ -96,9 +100,10 @@ def add_owner():
 
     if form.validate_on_submit():
         name = form.name.data
+        email = form.email.data
         pup_id = form.pup_id.data
         # Add new owner to database
-        new_owner = Owner(name,pup_id)
+        new_owner = Owner(name,email,pup_id)
         db.session.add(new_owner)
         db.session.commit()
 
