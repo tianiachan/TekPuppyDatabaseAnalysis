@@ -9,6 +9,7 @@ class AddForm(FlaskForm):
     size = StringField('Size of Puppy (small, medium, large):')
     age = IntegerField('Age of Puppy (years):')
     breed = StringField('Breed of Puppy:')
+    activity_mode = StringField('Activity mode (couch potato, regular, hyper):')
     submit = SubmitField('Add Puppy')
 
 class AddOwnerForm(FlaskForm):

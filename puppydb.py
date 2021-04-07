@@ -30,13 +30,15 @@ class Puppy(db.Model):
     size = db.Column(db.Text)
     age = db.Column(db.Integer)
     breed = db.Column(db.Text)
+    activity_mode = db.Column(db.Text)
     owners = db.relationship('Owner',backref='puppies',uselist=False)
 
-    def __init__(self,name,size,age,breed):
+    def __init__(self,name,size,age,breed, activity_mode):
         self.name = name
         self.size = size
         self.age = age
         self.breed = breed
+        self.activity_mode = activity_mode
 
     def __repr__(self):
         if self.owners:
@@ -61,12 +63,9 @@ class Owner(db.Model):
 
     def __repr__(self):
         return f"Owner Name: {self.name}"
+#create all tables
 db.create_all()
-############################################
 
-        # VIEWS WITH FORMS
-
-##########################################
 #home page
 @app.route('/')
 def index():
@@ -82,9 +81,10 @@ def add_pup():
         size = form.size.data
         age = form.age.data
         breed = form.breed.data
+        activity_mode = form.activity_mode.data
 
         # Add new Puppy to database
-        new_pup = Puppy(name, size, age, breed)
+        new_pup = Puppy(name, size, age, breed, activity_mode)
         db.session.add(new_pup)
         db.session.commit()
 

@@ -1,0 +1,12 @@
+id,name,size,age,breed,activity_mode
+1,Flix,large,6,"German Shepherd",hyper
+2,Bid,small,3,Basenji,hyper
+3,Blade,medium,7,"Pit Bull","couch potato"
+4,Callahan,large,5,"Alaskan Malamute",regular
+5,Hammer,large,8,Akita,regular
+6,Huck,medium,4,"Shiba Inu",hyper
+7,Pancake,medium,7,Samoyed,"couch potato"
+8,Poach,small,6,"Bichon Frise","couch potato"
+9,Savage,small,2,Pomeranian,hyper
+10,Scoober,medium,6,Dalmatian,hyper
+11,"Sea Biscuit",large,10,"St. Bernard","couch potato"
