@@ -31,7 +31,7 @@ h1 {
   color:#03b1fc
 }
 
-#btmNavBar{
-  opacity: 0.5; 
+#d-flex{
+  opacity: 1.0; 
   filter:(opacity=50);  
 }
