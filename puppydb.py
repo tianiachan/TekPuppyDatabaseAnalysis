@@ -8,18 +8,15 @@ app = Flask(__name__)
 # Key for Forms
 app.config['SECRET_KEY'] = secretKey
 
-############################################
-
-        # SQL DATABASE AND MODELS
-
-##########################################
+# connect to database
 basedir = os.path.abspath(os.path.dirname(__file__))
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mys:///' + os.path.join(basedir, 'data.sqlite')
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql+pymysql://{username}:{password}@localhost/puppydb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+#instantiate objects needed
 db = SQLAlchemy(app)
-Migrate(app,db)
+# Migrate(app,db)
 
 class Puppy(db.Model):
     # manually set name of table  to puppies
@@ -33,6 +30,7 @@ class Puppy(db.Model):
     activity_mode = db.Column(db.Text)
     owners = db.relationship('Owner',backref='puppies',uselist=False)
 
+    # pass in values needed to initiate a puppy objt
     def __init__(self,name,size,age,breed, activity_mode):
         self.name = name
         self.size = size
@@ -40,6 +38,7 @@ class Puppy(db.Model):
         self.breed = breed
         self.activity_mode = activity_mode
 
+    #this method is what is called if need a string representation of the object
     def __repr__(self):
         if self.owners:
             return f"Puppy id: {self.id} | Name: {self.name} | Foster Pawrent: {self.owners.name}"
@@ -64,6 +63,7 @@ class Owner(db.Model):
 
     def __repr__(self):
         return f"Owner Name: {self.name}"
+
 #create all tables
 db.create_all()
 
@@ -77,6 +77,7 @@ def index():
 def add_pup():
     form = AddForm()
 
+    #check that the values passed in are the correct data values using this method
     if form.validate_on_submit():
         name = form.name.data
         size = form.size.data
@@ -138,5 +139,5 @@ def del_pup():
 
 #if im called main, run me
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True)#make false if this was actually deployed
 
