@@ -60,6 +60,7 @@ class Owner(db.Model):
     def __init__(self,name,email,puppy_id):
         self.name = name
         self.puppy_id = puppy_id
+        self.email = email
 
     def __repr__(self):
         return f"Owner Name: {self.name}"
@@ -103,7 +104,7 @@ def add_owner():
         email = form.email.data
         pup_id = form.pup_id.data
         # Add new owner to database
-        new_owner = Owner(name,email,pup_id)
+        new_owner = Owner(name, email, pup_id)
         db.session.add(new_owner)
         db.session.commit()
 
