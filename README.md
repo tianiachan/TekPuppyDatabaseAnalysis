@@ -12,7 +12,7 @@ Jupyter Notebooks: to run the basic analysis
 2. Run through the Analysis python file either with [Jupyter Notebook through Anaconda](https://www.anaconda.com/products/individual) or [VSCode](https://code.visualstudio.com/download). This will create the beginning database as well as fill in the database with starting information.
 3. Through the terminal in VS code, type "python puppydb.py" to launch the website through Flask. Some extra installation of python packages may be needed. Use pip install to install said packages and then it should run locally.
 
-#Follow Up Goals:
+### Follow Up Goals:
 * run further analysis
 * better functionality for the webpage
 * host through AWS to make it accessible without downloading project 
