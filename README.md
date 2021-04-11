@@ -14,7 +14,7 @@ Jupyter Notebooks: to run the basic analysis
 4. Through the terminal in VS code, type "python puppydb.py" to launch the website through Flask. Some extra installation of python packages may be needed. Use pip install to install said packages and then it should run locally.
 
 ### Video walk through:
-[PuppyDB Video Walkthrough](https://youtu.be/ttHr7hrG2sE)
+[PuppyDB Video Walkthrough](https://www.youtube.com/watch?v=J-_8bIXR8JU)
 
 ### Follow Up Goals:
 * run further analysis
